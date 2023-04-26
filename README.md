@@ -8,5 +8,9 @@ def draw_stand: This method takes in coordinates and colors as arguements to mak
 
 def draw_corner_flags: This method takes in color and flag coordinates as arguements to make the flags in the screen.
 
+added an updated version of graphics under graphics_v4_vi18.py
+
+
 
 Members: Jimmy Chu (Chuchainz)
+kelsey coen (potatosalad82)
