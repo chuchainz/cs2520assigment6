@@ -24,3 +24,4 @@ added an updated version of graphics under graphics_v4_vi18.py
 
 Members: Jimmy Chu (Chuchainz)
 kelsey coen (potatosalad82)
+Vincent Lee (vincentlee1218)
