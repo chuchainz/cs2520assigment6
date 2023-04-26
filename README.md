@@ -14,6 +14,10 @@ draw_fence(y, height): This function draws a fence at a specified height on the 
 
 draw_scoreboard(x, y, width, height, pad): This function draws a scoreboard at a specified location and size using rectangles and lines. It takes in optional arguments to specify the x-coordinate, y-coordinate, width, height, and padding of the scoreboard, but defaults to 300, 40, 200, 90, and 2, respectively.
 
+draw_stand: this function takes in a screen object, a list of stand_list which contains the coordinates for the left and right stands, and a colors_list which contains the colors of the stands. The function then uses the pygame.draw.polygon method to draw the stands on the screen with the corresponding colors. The stand1 and stand2 lists are the coordinates for the left and right stands, respectively.
+
+draw_corner_flags: this function takes in the screen object, a color for the flag and a flag_pos which is the position where the flag is to be placed. The function then uses pygame.draw.line method to draw the pole of the flag and pygame.draw.polygon method to draw the flag with the given color.
+
 added an updated version of graphics under graphics_v4_vi18.py
 
 
