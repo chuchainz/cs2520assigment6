@@ -73,7 +73,6 @@ CLOUD_SPEED = 0.5
 FIELD_LEVEL = 0.3
 
 ## Functions
-
 def draw_cloud(x, y):
     """Draw a cloud with the upper left corner at coordinates (x, y)."""
     pygame.draw.ellipse(SEE_THROUGH, cloud_color, [x, y + 8, 10, 10])
@@ -290,6 +289,7 @@ while not done:
     # net
     draw_net(320, 140)
 
+    #This method takes in coordinates and colors as arguements to make the stands in the screen
     def draw_stand(screen, stand_list, colors_list):
         for i in range(len(stand_list)):
             pygame.draw.polygon(screen, colors_list[i], stand_list[i])
