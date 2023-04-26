@@ -237,10 +237,12 @@ while not done:
     pygame.draw.ellipse(screen, light_color, [670, 20, 20, 20])
     pygame.draw.line(screen, GRAY, [590, 20], [690, 20], 2)
 
+    #This method makes takes in coordinates for the color, points, and width as arguements to make the goal in the screen
     def draw_net(screen, color, points_list, width):
         for points in points_list:
             pygame.draw.line(screen, color, points[0], points[1], width)
     
+    #these are coordinates to make the net and can be changed when needed
     net1 = [([325, 140], [341, 200]), 
             ([330, 140], [344, 200]), 
             ([335, 140], [347, 200]),
@@ -310,40 +312,34 @@ while not done:
             ([335, 192], [465, 192]),
             ([335, 196], [465, 196])]
 
+    #call the methods to actually make the net using all 4 coordinate lists
     draw_net(screen, WHITE, net1, 1)
     draw_net(screen, WHITE, net2, 1)
     draw_net(screen, WHITE, net3, 1)
     draw_net(screen, WHITE, net4, 1)
 
+    #This method takes in coordinates and colors as arguements to make the stands in the screen
     def draw_stand(screen, stand_list, colors_list):
         for i in range(len(stand_list)):
             pygame.draw.polygon(screen, colors_list[i], stand_list[i])
     
+    #coordinate lists to make the right and left stands
     stand1 = [[[680, 220], [800, 340], [800, 290], [680, 180]], 
               [[680, 180], [800, 100], [800, 290]]]
     stand2 = [[[120, 220], [0, 340], [0, 290], [120, 180]], 
               [[120, 180], [0, 100], [0, 290]]]
     color_list = [RED, WHITE]
 
+    #implementation of the method to output the stand on the screen 
     draw_stand(screen, stand1, color_list)
     draw_stand(screen, stand2, color_list)
 
-    #people
-
-    # #corner flag right
-    # pygame.draw.line(screen, BRIGHT_YELLOW, [140, 220], [135, 190], 3)
-    # pygame.draw.polygon(screen, RED, [[132, 190], [125, 196], [135, 205]])
-
-
-    # #corner flag left
-    # pygame.draw.line(screen, BRIGHT_YELLOW, [660, 220], [665, 190], 3)
-    # pygame.draw.polygon(screen, RED, [[668, 190], [675, 196], [665, 205]]) 
-
+    #This method takes in color and flag coordinates as arguements to make the flags in the screen.
     def draw_corner_flags(screen, color, flag_pos):
         pygame.draw.line(screen, BRIGHT_YELLOW, flag_pos, (flag_pos[0]-5, flag_pos[1]-30), 3)
         pygame.draw.polygon(screen, color, [(flag_pos[0]-8, flag_pos[1]-30), (flag_pos[0]-15, flag_pos[1]-24), (flag_pos[0]-5, flag_pos[1]-15)])
 
-    # draw the corner flags
+    #implentation of the method with coordinates to output the flats on the screen
     draw_corner_flags(screen, RED, (140, 220))  # draw right corner flag
     draw_corner_flags(screen, RED, (660, 220))  # draw left corner flag
 
