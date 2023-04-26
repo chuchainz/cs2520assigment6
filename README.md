@@ -1,6 +1,6 @@
 # CS2520 Assignment 6
 
-Project is located under ----> Intro to Pygame Graphics > major league soccer animation > graphics_v4.py
+Project is located under ----> Intro to Pygame Graphics > major league soccer animation > graphics_v4_vi18.py
 
 draw_cloud(x, y): This function takes in the coordinates of the upper left corner of a cloud, and then draws the cloud using ellipses and rectangles.
 
