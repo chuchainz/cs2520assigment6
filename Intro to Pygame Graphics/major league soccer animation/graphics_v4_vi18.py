@@ -290,22 +290,29 @@ while not done:
     # net
     draw_net(320, 140)
 
-    #stands right
-    pygame.draw.polygon(screen, RED, [[680, 220], [800, 340], [800, 290], [680, 180]])
-    pygame.draw.polygon(screen, WHITE, [[680, 180], [800, 100], [800, 290]])
+    def draw_stand(screen, stand_list, colors_list):
+        for i in range(len(stand_list)):
+            pygame.draw.polygon(screen, colors_list[i], stand_list[i])
     
-    #stands left
-    pygame.draw.polygon(screen, RED, [[120, 220], [0, 340], [0, 290], [120, 180]])
-    pygame.draw.polygon(screen, WHITE, [[120, 180], [0, 100], [0, 290]])
-    #people
-    
-    #corner flag right
-    pygame.draw.line(screen, BRIGHT_YELLOW, [140, 220], [135, 190], 3)
-    pygame.draw.polygon(screen, RED, [[132, 190], [125, 196], [135, 205]])
+    #coordinate lists to make the right and left stands
+    stand1 = [[[680, 220], [800, 340], [800, 290], [680, 180]], 
+              [[680, 180], [800, 100], [800, 290]]]
+    stand2 = [[[120, 220], [0, 340], [0, 290], [120, 180]], 
+              [[120, 180], [0, 100], [0, 290]]]
+    color_list = [RED, WHITE]
 
-    #corner flag left
-    pygame.draw.line(screen, BRIGHT_YELLOW, [660, 220], [665, 190], 3)
-    pygame.draw.polygon(screen, RED, [[668, 190], [675, 196], [665, 205]]) 
+    #implementation of the method to output the stand on the screen 
+    draw_stand(screen, stand1, color_list)
+    draw_stand(screen, stand2, color_list)
+
+    #This method takes in color and flag coordinates as arguements to make the flags in the screen.
+    def draw_corner_flags(screen, color, flag_pos):
+        pygame.draw.line(screen, BRIGHT_YELLOW, flag_pos, (flag_pos[0]-5, flag_pos[1]-30), 3)
+        pygame.draw.polygon(screen, color, [(flag_pos[0]-8, flag_pos[1]-30), (flag_pos[0]-15, flag_pos[1]-24), (flag_pos[0]-5, flag_pos[1]-15)])
+
+    #implentation of the method with coordinates to output the flats on the screen
+    draw_corner_flags(screen, RED, (140, 220))  # draw right corner flag
+    draw_corner_flags(screen, RED, (660, 220))  # draw left corner flag
 
     # DARKNESS
     if not day and not lights_on:
